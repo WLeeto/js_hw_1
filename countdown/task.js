@@ -3,7 +3,7 @@ let remainingTime = Number(current_time.textContent)
 
 current_time.textContent = "00:00:05"
 
-setInterval(() => {
+let intervalId = setInterval(() => {
     remainingTime--
 
     const hours = Math.floor(remainingTime / 3600)
@@ -18,6 +18,7 @@ setInterval(() => {
 
     if (remainingTime <= 0) {
         // alert("Ура! Таймер закончился!")
+        clearInterval(intervalId)
         window.location.href = "https://disk.yandex.ru/i/atGaa_JbL-eVPA"
     }
 
